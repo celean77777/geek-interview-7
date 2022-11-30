@@ -1,9 +1,15 @@
 package com.celean.students.entityes;
 
-import jakarta.persistence.*;
+
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name = "students")
+@Data
+@NoArgsConstructor
 public class Student {
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,38 +21,5 @@ public class Student {
 
         @Column(name = "age")
         private int age;
-
-        public Long getId() {
-            return id;
-        }
-
-        public String getTitle() {
-            return title;
-        }
-
-        public int getPrice() {
-            return price;
-        }
-
-        public void setId(Long id) {
-            this.id = id;
-        }
-
-        public void setTitle(String title) {
-            this.title = title;
-        }
-
-        public void setPrice(int price) {
-            this.price = price;
-        }
-
-        public Product() {
-        }
-
-        public Product(String title, int price){
-            this.title=title;
-            this.price=price;
-        }
-    }
 
 }
